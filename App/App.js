@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { MainRoute } from "./Routers/index.js";
 import { FlowersRouters } from "./Routers/flowers.js";
 import { connect } from "mongoose";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ const CONNECTION_STRING = process.env.MONG0_CONNECTION;
 
 app.use("/", MainRoute);
 app.use(express.json());
+app.use(cors());
 app.use("/flowers", FlowersRouters);
 
 //make connection
