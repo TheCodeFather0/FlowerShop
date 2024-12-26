@@ -10,6 +10,7 @@ const port = process.env.NODE_PORT;
 const CONNECTION_STRING = process.env.MONG0_CONNECTION;
 
 app.use("/", MainRoute);
+app.use(express.json());
 app.use("/flowers", FlowersRouters);
 
 //make connection
